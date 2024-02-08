@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Tutor Services";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/calculator.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1>Tutoring Calculator</h1>
+        <label for="hours">Enter Number of Hours:</label>
+        <input type="number" id="hours" min="0">
+        <br>
+        <label for="rate">Hourly Rate: </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="rate">$100</span>
+        <br><br>
+        <button id="calculate">Calculate Total</button>
+        <br><br>
+        <label for="total">Total:</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="total" readonly>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/">Back to Home Page</a>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#calculate').click(function () {
+                var hours = parseFloat($('#hours').val());
+                if (isNaN(hours) || hours <= 0) {
+                    alert('Please enter a valid positive number for hours.');
+                    return;
+                }
+
+                var rate = parseFloat($('#rate').text().substring(1)); // Remove '$' and parse as float
+                var total = hours * rate;
+                $('#total').val('$' + total.toFixed(2)); // Display total with 2 decimal places
+            });
+        });
+    </script>
+</body>
+</html>

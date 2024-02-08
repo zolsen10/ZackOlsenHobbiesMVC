@@ -1,0 +1,55 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa; /* Light gray background color */
+    background-image: url('/lib/img/IMG_4028.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    background-color: white; /* White background for the main content */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+    max-width: 600px; /* Limit the width of the main content */
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Spacing between form elements */
+}
+
+    .form-group label {
+        font-weight: bold; /* Bold label text */
+    }
+
+    .form-group input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc; /* Gray border */
+        border-radius: 5px;
+        box-sizing: border-box; /* Include padding and border in the width */
+    }
+
+    .form-group input[type="button"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff; /* Blue background color */
+        color: white; /* White text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .form-group input[type="button"]:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+
+    .form-group input[type="text"][readonly] {
+        background-color: #f8f9fa; /* Light gray background for read-only text box */
+        border: 1px solid #ccc; /* Gray border */
+    }
